@@ -2,7 +2,6 @@
   "name": "schemas",
   "compatibility_date": "2025-11-15",
   "assets": {
-    "directory": "./schemas",
-    "run_worker_first": false
+    "directory": "./schemas"
   }
 }
