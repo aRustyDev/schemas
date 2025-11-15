@@ -1,0 +1,18 @@
+{
+  "$id": "https://schemas.arusty.dev/markdown/permalink",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "index": {
+      "type": "number"
+    },
+    "permalink": {
+      "type": "string"
+    },
+    "hint": {
+      "type": "string"
+    }
+  },
+  "required": ["index", "permalink", "hint"]
+}
