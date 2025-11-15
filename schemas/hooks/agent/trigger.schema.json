@@ -1,0 +1,21 @@
+{
+  "$id": "https://schemas.arusty.dev/hooks/agent/triggers",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "",
+  "type": "object",
+  "required": ["hooks"],
+  "properties": {
+    "matcher": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hooks": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "https://schemas.arusty.dev/configs/ai/hook"
+      }
+    }
+  }
+}

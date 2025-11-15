@@ -1,0 +1,12 @@
+{
+  "$id": "https://schemas.arusty.dev/configs/ai/claude/settings",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "hooks": {
+      "$ref": "https://schemas.arusty.dev/configs/ai/claude/hooks#hooks"
+    }
+  },
+  "required": ["hooks"]
+}

@@ -1,0 +1,7 @@
+this extends frontmatter.schema.json
+adds additional properties to reference
+- GOAL
+- tasks
+- checklists
+- principles
+- etc

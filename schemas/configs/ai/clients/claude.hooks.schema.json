@@ -1,0 +1,52 @@
+{
+  "$id": "https://schemas.arusty.dev/configs/ai/claude/hooks",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "hooks": {
+      "type": "object",
+      "properties": {
+        "PostToolUse": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "https://schemas.arusty.dev/configs/ai/trigger"
+          }
+        },
+        "PreToolUse": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "https://schemas.arusty.dev/configs/ai/trigger"
+          }
+        },
+        "SubagentStop": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "https://schemas.arusty.dev/configs/ai/trigger"
+          }
+        },
+        "UserPromptSubmit": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$ref": "https://schemas.arusty.dev/configs/ai/trigger"
+          }
+        }
+      },
+      "required": [
+        "PostToolUse",
+        "PreToolUse",
+        "SubagentStop",
+        "UserPromptSubmit"
+      ]
+    }
+  },
+  "required": ["hooks"]
+}
