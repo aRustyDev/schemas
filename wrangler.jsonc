@@ -3,5 +3,11 @@
   "compatibility_date": "2025-11-15",
   "assets": {
     "directory": "./schemas"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "schemas.arusty.dev",
+      "custom_domain": true
+    }
+  ]
 }
