@@ -1,0 +1,11 @@
+{
+  "path": "/configs/ai",
+  "entries": [
+    {
+      "name": "clients",
+      "type": "directory",
+      "path": "configs/ai/clients"
+    }
+  ],
+  "generated": "2025-12-21T05:45:16.957Z"
+}

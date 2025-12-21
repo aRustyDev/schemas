@@ -1,0 +1,11 @@
+{
+  "path": "/hooks",
+  "entries": [
+    {
+      "name": "agent",
+      "type": "directory",
+      "path": "hooks/agent"
+    }
+  ],
+  "generated": "2025-12-21T05:45:16.962Z"
+}

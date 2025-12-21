@@ -1,0 +1,11 @@
+{
+  "path": "/hashicorps",
+  "entries": [
+    {
+      "name": "tf",
+      "type": "directory",
+      "path": "hashicorps/tf"
+    }
+  ],
+  "generated": "2025-12-21T05:45:16.960Z"
+}

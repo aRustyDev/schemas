@@ -1,0 +1,27 @@
+{
+  "path": "/markdown/changelog",
+  "entries": [
+    {
+      "name": "changelog.schema.json",
+      "type": "file",
+      "path": "markdown/changelog/changelog.schema.json",
+      "size": 1517,
+      "modified": "2025-12-21T05:45:16.822Z"
+    },
+    {
+      "name": "entry.schema.json",
+      "type": "file",
+      "path": "markdown/changelog/entry.schema.json",
+      "size": 580,
+      "modified": "2025-12-21T05:45:16.822Z"
+    },
+    {
+      "name": "release.schema.json",
+      "type": "file",
+      "path": "markdown/changelog/release.schema.json",
+      "size": 1212,
+      "modified": "2025-12-21T05:45:16.822Z"
+    }
+  ],
+  "generated": "2025-12-21T05:45:16.963Z"
+}

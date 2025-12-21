@@ -1,43 +1,20 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.arusty.dev/markdown/frontmatter/index.json",
-  "title": "Frontmatter Schema Index",
-  "description": "Available versions of the Markdown Frontmatter Schema",
-  "type": "object",
-  "properties": {
-    "name": {
-      "const": "frontmatter"
+  "path": "/markdown/frontmatter",
+  "entries": [
+    {
+      "name": "latest.schema.json",
+      "type": "file",
+      "path": "markdown/frontmatter/latest.schema.json",
+      "size": 5149,
+      "modified": "2025-12-21T05:45:16.822Z"
     },
-    "description": {
-      "const": "Schema for validating YAML/JSON frontmatter in AI-managed documentation files"
-    },
-    "latest": {
-      "const": "v1.0.0"
-    },
-    "versions": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "version": { "type": "string" },
-          "url": { "type": "string", "format": "uri" },
-          "released": { "type": "string", "format": "date" },
-          "deprecated": { "type": "boolean" }
-        }
-      }
+    {
+      "name": "v1.0.0.schema.json",
+      "type": "file",
+      "path": "markdown/frontmatter/v1.0.0.schema.json",
+      "size": 5129,
+      "modified": "2025-12-21T05:45:16.822Z"
     }
-  },
-  "default": {
-    "name": "frontmatter",
-    "description": "Schema for validating YAML/JSON frontmatter in AI-managed documentation files",
-    "latest": "v1.0.0",
-    "versions": [
-      {
-        "version": "v1.0.0",
-        "url": "https://schemas.arusty.dev/markdown/frontmatter/v1.0.0.schema.json",
-        "released": "2025-12-20",
-        "deprecated": false
-      }
-    ]
-  }
+  ],
+  "generated": "2025-12-21T05:45:16.964Z"
 }

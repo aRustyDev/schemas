@@ -1,0 +1,36 @@
+{
+  "path": "//",
+  "entries": [
+    {
+      "name": "addy",
+      "type": "directory",
+      "path": "addy"
+    },
+    {
+      "name": "ai",
+      "type": "directory",
+      "path": "ai"
+    },
+    {
+      "name": "configs",
+      "type": "directory",
+      "path": "configs"
+    },
+    {
+      "name": "hashicorps",
+      "type": "directory",
+      "path": "hashicorps"
+    },
+    {
+      "name": "hooks",
+      "type": "directory",
+      "path": "hooks"
+    },
+    {
+      "name": "markdown",
+      "type": "directory",
+      "path": "markdown"
+    }
+  ],
+  "generated": "2025-12-21T05:45:16.966Z"
+}

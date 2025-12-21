@@ -1,0 +1,37 @@
+{
+  "path": "/markdown",
+  "entries": [
+    {
+      "name": "changelog",
+      "type": "directory",
+      "path": "markdown/changelog"
+    },
+    {
+      "name": "frontmatter",
+      "type": "directory",
+      "path": "markdown/frontmatter"
+    },
+    {
+      "name": "link.schema.json",
+      "type": "file",
+      "path": "markdown/link.schema.json",
+      "size": 347,
+      "modified": "2025-12-21T05:45:16.822Z"
+    },
+    {
+      "name": "permalink.schema.json",
+      "type": "file",
+      "path": "markdown/permalink.schema.json",
+      "size": 364,
+      "modified": "2025-12-21T05:45:16.822Z"
+    },
+    {
+      "name": "table.schema.json",
+      "type": "file",
+      "path": "markdown/table.schema.json",
+      "size": 0,
+      "modified": "2025-12-21T05:45:16.822Z"
+    }
+  ],
+  "generated": "2025-12-21T05:45:16.966Z"
+}
