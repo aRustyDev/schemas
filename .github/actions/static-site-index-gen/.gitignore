@@ -1,0 +1,3 @@
+.DS_Store
+node_modules
+# Note: dist/ is NOT ignored - GitHub Actions require the bundled output to be committed

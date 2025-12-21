@@ -1,0 +1,11 @@
+{
+  "path": "/src",
+  "entries": [
+    {
+      "name": "main.ts",
+      "type": "file",
+      "path": "src/main.ts"
+    }
+  ],
+  "generated": "2025-12-21T05:34:30.111Z"
+}

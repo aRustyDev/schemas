@@ -1,0 +1,64 @@
+name: Generate Site Indices
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'schemas/**'
+      - '!schemas/**/index.html'
+      - '!schemas/**/index.json'
+  workflow_dispatch:
+    inputs:
+      root:
+        description: 'Root directory to scan'
+        default: './schemas'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate indices
+        id: generate
+        uses: ./.github/actions/static-site-index-gen
+        with:
+          root: ${{ inputs.root || './schemas' }}
+          output-format: 'both'
+          include-metadata: 'true'
+          title-template: 'Schema Registry - {path}'
+          ignore: |
+            node_modules
+            .git
+            .github
+            *.map
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Generated ${{ steps.generate.outputs.generated-count }} index files"
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(indices): update generated index files
+
+          ### Changed
+          - Regenerated ${{ steps.generate.outputs.generated-count }} index files across ${{ steps.generate.outputs.directories-scanned }} directories
+
+          [skip ci]"
+          git push

@@ -1,0 +1,54 @@
+name: 'Static Site Index Generator'
+description: 'Generate index.html and optionally index.json for static sites served by Cloudflare Workers'
+author: 'aRustyDev'
+
+branding:
+  icon: 'list'
+  color: 'orange'
+
+inputs:
+  root:
+    description: 'Root directory to scan for files'
+    required: false
+    default: '.'
+  output-format:
+    description: 'Output format: html, json, or both'
+    required: false
+    default: 'both'
+  stylesheet:
+    description: 'URL to external stylesheet for HTML output'
+    required: false
+    default: ''
+  ignore:
+    description: 'Gitignore-style patterns to exclude (newline or comma separated)'
+    required: false
+    default: |
+      node_modules
+      .git
+      .github
+      *.map
+      *.d.ts
+  include-metadata:
+    description: 'Include file sizes and modification dates in output'
+    required: false
+    default: 'true'
+  title-template:
+    description: 'Template for page titles. Use {path} as placeholder'
+    required: false
+    default: 'Index of {path}'
+  token:
+    description: 'GitHub token for API access'
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  generated-count:
+    description: 'Number of index files generated'
+  directories-scanned:
+    description: 'Number of directories processed'
+  manifest-path:
+    description: 'Path to the root manifest file (if JSON output enabled)'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
