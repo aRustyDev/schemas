@@ -1,0 +1,13 @@
+{
+  "name": "gha",
+  "description": "Schemas for GitHub Actions in arustydev/gha",
+  "schemas": [
+    {
+      "name": "symlink-map",
+      "description": "Configuration for symlink-map GitHub Action",
+      "versions": ["v1"],
+      "latest": "v1",
+      "path": "symlink-map/v1.schema.json"
+    }
+  ]
+}
