@@ -1,0 +1,69 @@
+{
+  "$id": "https://schemas.arusty.dev/mdbook/uuid-index.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MDBook UUID Index",
+  "description": "Schema for the UUID-to-path index file used by mdbook-ref-resolver to resolve uuid: references to file paths.",
+  "type": "object",
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "description": "UUID v4 format identifier"
+    },
+    "isoDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp"
+    },
+    "documentType": {
+      "type": "string",
+      "enum": ["adr", "doc", "blog", "note"],
+      "description": "Classification of the document type"
+    },
+    "indexEntry": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^[^/].*\\.md$",
+          "description": "Relative path to the markdown file from the book root"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "description": "Document title extracted from frontmatter or first heading"
+        },
+        "type": {
+          "$ref": "#/$defs/documentType"
+        }
+      },
+      "required": ["path", "title", "type"],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+$",
+      "description": "Schema version for the index format",
+      "examples": ["1.0", "1.1"]
+    },
+    "generated_at": {
+      "$ref": "#/$defs/isoDateTime",
+      "description": "Timestamp when the index was generated"
+    },
+    "entries": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/$defs/uuid"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/indexEntry"
+      },
+      "description": "Map of UUID to document entry metadata"
+    }
+  },
+  "required": ["version", "generated_at", "entries"],
+  "additionalProperties": false
+}
