@@ -1,0 +1,20 @@
+{
+  "path": "/mdbook",
+  "entries": [
+    {
+      "name": "docs-graph.schema.json",
+      "type": "file",
+      "path": "mdbook/docs-graph.schema.json",
+      "size": 6902,
+      "modified": "2025-12-23T07:17:56.011Z"
+    },
+    {
+      "name": "uuid-index.schema.json",
+      "type": "file",
+      "path": "mdbook/uuid-index.schema.json",
+      "size": 2068,
+      "modified": "2025-12-23T07:17:56.011Z"
+    }
+  ],
+  "generated": "2025-12-23T07:17:56.155Z"
+}

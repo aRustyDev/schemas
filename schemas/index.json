@@ -17,6 +17,11 @@
       "path": "configs"
     },
     {
+      "name": "gha",
+      "type": "directory",
+      "path": "gha"
+    },
+    {
       "name": "hashicorps",
       "type": "directory",
       "path": "hashicorps"
@@ -30,7 +35,12 @@
       "name": "markdown",
       "type": "directory",
       "path": "markdown"
+    },
+    {
+      "name": "mdbook",
+      "type": "directory",
+      "path": "mdbook"
     }
   ],
-  "generated": "2025-12-21T05:45:16.966Z"
+  "generated": "2025-12-23T07:17:56.155Z"
 }
