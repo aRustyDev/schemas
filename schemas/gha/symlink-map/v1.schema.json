@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.arusty.dev/gha/symlink-map/v1.schema.json",
+  "title": "Symlink Map Configuration",
+  "description": "Configuration for symlink-map GitHub Action. Supports explicit links array or books mapping format.",
+  "type": "object",
+  "oneOf": [
+    { "required": ["links"] },
+    { "required": ["books"] }
+  ],
+  "properties": {
+    "links": {
+      "type": "array",
+      "description": "Explicit list of symlinks to create",
+      "items": {
+        "type": "object",
+        "required": ["source", "target"],
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "Source path (must exist)",
+            "minLength": 1
+          },
+          "target": {
+            "type": "string",
+            "description": "Target symlink path",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "books": {
+      "type": "object",
+      "description": "Book sources mapping (sources.yml format)",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["repo", "path"],
+        "properties": {
+          "repo": {
+            "type": "string",
+            "description": "GitHub repository (owner/repo)",
+            "pattern": "^[a-zA-Z0-9_-]+/[a-zA-Z0-9_.-]+$"
+          },
+          "path": {
+            "type": "string",
+            "description": "Path within repository",
+            "minLength": 1
+          },
+          "ref": {
+            "type": "string",
+            "description": "Git ref (branch/tag)",
+            "default": "main"
+          },
+          "title": {
+            "type": "string",
+            "description": "Display title for this source"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minProperties": 1
+    }
+  }
+}
