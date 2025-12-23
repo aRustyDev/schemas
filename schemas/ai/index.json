@@ -6,36 +6,36 @@
       "type": "file",
       "path": "ai/checklist",
       "size": 0,
-      "modified": "2025-12-23T07:17:56.009Z"
+      "modified": "2025-12-23T07:18:51.566Z"
     },
     {
       "name": "plan",
       "type": "file",
       "path": "ai/plan",
       "size": 0,
-      "modified": "2025-12-23T07:17:56.009Z"
+      "modified": "2025-12-23T07:18:51.566Z"
     },
     {
       "name": "roadmap",
       "type": "file",
       "path": "ai/roadmap",
       "size": 0,
-      "modified": "2025-12-23T07:17:56.009Z"
+      "modified": "2025-12-23T07:18:51.566Z"
     },
     {
       "name": "slash-command",
       "type": "file",
       "path": "ai/slash-command",
       "size": 124,
-      "modified": "2025-12-23T07:17:56.009Z"
+      "modified": "2025-12-23T07:18:51.566Z"
     },
     {
       "name": "spec",
       "type": "file",
       "path": "ai/spec",
       "size": 0,
-      "modified": "2025-12-23T07:17:56.009Z"
+      "modified": "2025-12-23T07:18:51.566Z"
     }
   ],
-  "generated": "2025-12-23T07:17:56.138Z"
+  "generated": "2025-12-23T07:18:51.695Z"
 }

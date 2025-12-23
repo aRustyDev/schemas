@@ -2,19 +2,26 @@
   "path": "/mdbook",
   "entries": [
     {
+      "name": "affected-docs.schema.json",
+      "type": "file",
+      "path": "mdbook/affected-docs.schema.json",
+      "size": 5133,
+      "modified": "2025-12-23T07:18:51.567Z"
+    },
+    {
       "name": "docs-graph.schema.json",
       "type": "file",
       "path": "mdbook/docs-graph.schema.json",
       "size": 6902,
-      "modified": "2025-12-23T07:17:56.011Z"
+      "modified": "2025-12-23T07:18:51.567Z"
     },
     {
       "name": "uuid-index.schema.json",
       "type": "file",
       "path": "mdbook/uuid-index.schema.json",
       "size": 2068,
-      "modified": "2025-12-23T07:17:56.011Z"
+      "modified": "2025-12-23T07:18:51.567Z"
     }
   ],
-  "generated": "2025-12-23T07:17:56.155Z"
+  "generated": "2025-12-23T07:18:51.709Z"
 }
