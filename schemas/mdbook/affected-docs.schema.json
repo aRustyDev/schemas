@@ -1,0 +1,163 @@
+{
+  "$id": "https://schemas.arusty.dev/mdbook/affected-docs.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MDBook Affected Documents",
+  "description": "Schema for the affected documents output from mdbook-watch-matcher. Lists documents that need review or updates based on code changes matching their watch patterns.",
+  "type": "object",
+  "$defs": {
+    "isoDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp"
+    },
+    "documentType": {
+      "type": "string",
+      "enum": ["adr", "doc", "blog", "note"],
+      "description": "Classification of the document type"
+    },
+    "impactLevel": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"],
+      "description": "Impact level based on scoring"
+    },
+    "patternMatch": {
+      "type": "object",
+      "properties": {
+        "pattern": {
+          "type": "string",
+          "description": "The glob pattern from the document's watches frontmatter"
+        },
+        "matched_files": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "List of changed files that matched this pattern"
+        }
+      },
+      "required": ["pattern", "matched_files"],
+      "additionalProperties": false
+    },
+    "affectedDocument": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^[^/].*\\.md$",
+          "description": "Relative path to the affected markdown file"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "description": "Document title"
+        },
+        "type": {
+          "$ref": "#/$defs/documentType"
+        },
+        "impact_score": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Calculated impact score based on match count, graph position, and document type"
+        },
+        "impact_level": {
+          "$ref": "#/$defs/impactLevel",
+          "description": "Categorized impact level derived from impact_score"
+        },
+        "matched_patterns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/patternMatch"
+          },
+          "minItems": 1,
+          "description": "List of patterns that matched and their corresponding files"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Human-readable explanation of why this document was flagged"
+        }
+      },
+      "required": ["path", "title", "type", "impact_score", "matched_patterns", "reason"],
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "total_affected": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total count of affected documents"
+        },
+        "by_type": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/documentType"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": "Count of affected documents by type"
+        },
+        "critical": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of critical impact documents"
+        },
+        "high_impact": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of high impact documents"
+        },
+        "medium_impact": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of medium impact documents"
+        },
+        "low_impact": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of low impact documents"
+        }
+      },
+      "required": ["total_affected", "by_type"],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+$",
+      "description": "Schema version for the affected docs format"
+    },
+    "generated_at": {
+      "$ref": "#/$defs/isoDateTime",
+      "description": "Timestamp when the analysis was performed"
+    },
+    "base_ref": {
+      "type": "string",
+      "description": "Git reference used as the base for diff (e.g., origin/main)"
+    },
+    "head_ref": {
+      "type": "string",
+      "description": "Git reference used as the head for diff (e.g., HEAD)"
+    },
+    "changed_files": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of files that changed between base and head"
+    },
+    "affected_documents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/affectedDocument"
+      },
+      "description": "List of documents affected by the changes, sorted by impact_score descending"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary",
+      "description": "Aggregate statistics about affected documents"
+    }
+  },
+  "required": ["version", "generated_at", "changed_files", "affected_documents", "summary"],
+  "additionalProperties": false
+}
