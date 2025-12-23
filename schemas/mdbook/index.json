@@ -1,0 +1,13 @@
+{
+  "path": "/mdbook",
+  "entries": [
+    {
+      "name": "uuid-index.schema.json",
+      "type": "file",
+      "path": "mdbook/uuid-index.schema.json",
+      "size": 2068,
+      "modified": "2025-12-23T07:16:37.582Z"
+    }
+  ],
+  "generated": "2025-12-23T07:16:37.733Z"
+}
