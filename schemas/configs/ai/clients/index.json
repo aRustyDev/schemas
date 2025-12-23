@@ -6,43 +6,43 @@
       "type": "file",
       "path": "configs/ai/clients/claude.code.schema.json",
       "size": 308,
-      "modified": "2025-12-21T05:45:16.822Z"
+      "modified": "2025-12-23T07:16:37.581Z"
     },
     {
       "name": "claude.desktop.schema.json",
       "type": "file",
       "path": "configs/ai/clients/claude.desktop.schema.json",
       "size": 308,
-      "modified": "2025-12-21T05:45:16.822Z"
+      "modified": "2025-12-23T07:16:37.581Z"
     },
     {
       "name": "claude.hooks.schema.json",
       "type": "file",
       "path": "configs/ai/clients/claude.hooks.schema.json",
       "size": 1295,
-      "modified": "2025-12-21T05:45:16.822Z"
+      "modified": "2025-12-23T07:16:37.581Z"
     },
     {
       "name": "cortex.schema.json",
       "type": "file",
       "path": "configs/ai/clients/cortex.schema.json",
       "size": 0,
-      "modified": "2025-12-21T05:45:16.822Z"
+      "modified": "2025-12-23T07:16:37.581Z"
     },
     {
       "name": "gemini.schema.json",
       "type": "file",
       "path": "configs/ai/clients/gemini.schema.json",
       "size": 0,
-      "modified": "2025-12-21T05:45:16.822Z"
+      "modified": "2025-12-23T07:16:37.581Z"
     },
     {
       "name": "opencode.schema.json",
       "type": "file",
       "path": "configs/ai/clients/opencode.schema.json",
       "size": 0,
-      "modified": "2025-12-21T05:45:16.822Z"
+      "modified": "2025-12-23T07:16:37.581Z"
     }
   ],
-  "generated": "2025-12-21T05:45:16.956Z"
+  "generated": "2025-12-23T07:16:37.721Z"
 }
