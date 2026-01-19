@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.arusty.dev/gha/configs/atomic-branches.schema.json",
+  "title": "Atomic Branches Configuration",
+  "description": "Configuration for the atomization workflow that extracts content from integration PRs into atomic branches",
+  "type": "object",
+  "required": ["branches"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
+    "branches": {
+      "type": "array",
+      "description": "Branch pattern definitions for categorizing files",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "prefix", "pattern"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Branch name template. Use $<varname> for dynamic values extracted from pattern",
+            "pattern": "^(\\$[a-z_]+|[a-z][a-z0-9_-]*)$",
+            "examples": ["$chart", "$topic", "repo"]
+          },
+          "prefix": {
+            "type": "string",
+            "description": "Branch name prefix (e.g., 'chart/', 'docs/')",
+            "pattern": "^[a-z][a-z0-9-]*/",
+            "examples": ["chart/", "docs/", "ci/", "repo/"]
+          },
+          "pattern": {
+            "type": "string",
+            "description": "Regex pattern for matching file paths. Use (?P<name>...) for named capture groups",
+            "minLength": 1,
+            "examples": [
+              "charts/(?P<chart>[^/]+)/**",
+              "docs/src/(?P<topic>[^/]+)/**",
+              "\\.github/workflows/(?P<workflow>[^.]+)\\.ya?ml"
+            ]
+          }
+        }
+      }
+    },
+    "charts": {
+      "type": "array",
+      "description": "Chart-specific configuration for relationships and priority",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Chart name (must match a directory in charts/)",
+            "pattern": "^[a-z][a-z0-9-]*$",
+            "examples": ["cloudflared", "external-secrets"]
+          },
+          "related": {
+            "type": "array",
+            "description": "Glob patterns for files related to this chart (Tier 1 relationships)",
+            "items": {
+              "type": "string",
+              "description": "Glob pattern for related files",
+              "examples": [
+                "docs/src/cloudflared/*",
+                "docs/src/adr/adr-009.md"
+              ]
+            },
+            "default": []
+          },
+          "priority": {
+            "type": "integer",
+            "description": "Advisory priority for merge order (lower = higher priority)",
+            "minimum": 1,
+            "default": 100,
+            "examples": [1, 2, 10]
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "branches": [
+        {
+          "name": "$chart",
+          "prefix": "chart/",
+          "pattern": "charts/(?P<chart>[^/]+)/**"
+        },
+        {
+          "name": "$topic",
+          "prefix": "docs/",
+          "pattern": "docs/src/(?P<topic>[^/]+)/**"
+        }
+      ],
+      "charts": [
+        {
+          "name": "cloudflared",
+          "related": ["docs/src/cloudflared/*"],
+          "priority": 1
+        }
+      ]
+    }
+  ]
+}
