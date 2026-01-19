@@ -6,22 +6,22 @@
       "type": "file",
       "path": "hashicorps/tf/datasource.schema.json",
       "size": 66,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.260Z"
     },
     {
       "name": "provider.schema.json",
       "type": "file",
       "path": "hashicorps/tf/provider.schema.json",
       "size": 66,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.260Z"
     },
     {
       "name": "resource.schema.json",
       "type": "file",
       "path": "hashicorps/tf/resource.schema.json",
       "size": 66,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.260Z"
     }
   ],
-  "generated": "2025-12-23T07:18:51.702Z"
+  "generated": "2026-01-19T18:13:07.401Z"
 }

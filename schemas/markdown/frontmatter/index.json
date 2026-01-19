@@ -6,15 +6,15 @@
       "type": "file",
       "path": "markdown/frontmatter/latest.schema.json",
       "size": 5149,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.261Z"
     },
     {
       "name": "v1.0.0.schema.json",
       "type": "file",
       "path": "markdown/frontmatter/v1.0.0.schema.json",
       "size": 5129,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.261Z"
     }
   ],
-  "generated": "2025-12-23T07:18:51.707Z"
+  "generated": "2026-01-19T18:13:07.407Z"
 }

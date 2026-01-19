@@ -16,22 +16,22 @@
       "type": "file",
       "path": "markdown/link.schema.json",
       "size": 347,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.261Z"
     },
     {
       "name": "permalink.schema.json",
       "type": "file",
       "path": "markdown/permalink.schema.json",
       "size": 364,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.261Z"
     },
     {
       "name": "table.schema.json",
       "type": "file",
       "path": "markdown/table.schema.json",
       "size": 0,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.261Z"
     }
   ],
-  "generated": "2025-12-23T07:18:51.708Z"
+  "generated": "2026-01-19T18:13:07.408Z"
 }

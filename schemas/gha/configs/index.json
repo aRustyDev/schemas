@@ -1,0 +1,13 @@
+{
+  "path": "/gha/configs",
+  "entries": [
+    {
+      "name": "atomic-branches.schema.json",
+      "type": "file",
+      "path": "gha/configs/atomic-branches.schema.json",
+      "size": 3446,
+      "modified": "2026-01-19T18:13:07.260Z"
+    }
+  ],
+  "generated": "2026-01-19T18:13:07.398Z"
+}

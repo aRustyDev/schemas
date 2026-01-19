@@ -6,15 +6,15 @@
       "type": "file",
       "path": "hooks/agent/hook.schema.json",
       "size": 436,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.260Z"
     },
     {
       "name": "trigger.schema.json",
       "type": "file",
       "path": "hooks/agent/trigger.schema.json",
       "size": 455,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.260Z"
     }
   ],
-  "generated": "2025-12-23T07:18:51.704Z"
+  "generated": "2026-01-19T18:13:07.403Z"
 }

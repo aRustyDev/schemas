@@ -6,22 +6,22 @@
       "type": "file",
       "path": "mdbook/affected-docs.schema.json",
       "size": 5133,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.261Z"
     },
     {
       "name": "docs-graph.schema.json",
       "type": "file",
       "path": "mdbook/docs-graph.schema.json",
       "size": 6902,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.261Z"
     },
     {
       "name": "uuid-index.schema.json",
       "type": "file",
       "path": "mdbook/uuid-index.schema.json",
       "size": 2068,
-      "modified": "2025-12-23T07:18:51.567Z"
+      "modified": "2026-01-19T18:13:07.261Z"
     }
   ],
-  "generated": "2025-12-23T07:18:51.709Z"
+  "generated": "2026-01-19T18:13:07.409Z"
 }
